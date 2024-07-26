@@ -2,6 +2,11 @@
 Contain Wrapper Class for ChormaDB client, that can process and store documents and retrive document chunks.
 """
 
+# for chromaDB
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from io import BytesIO
 from typing import List
 import uuid
